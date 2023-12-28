@@ -25,16 +25,16 @@ Widget customTextField({
       contentPadding: const EdgeInsets.fromLTRB(15, 22, 12, 14),
       border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
-          borderSide: const BorderSide(color: AppColors.grey)),
+          borderSide: const BorderSide(color: AppColors.orange)),
       enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
-          borderSide: const BorderSide(color: AppColors.grey)),
+          borderSide: const BorderSide(color: AppColors.orange)),
       disabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
-          borderSide: const BorderSide(color: AppColors.grey)),
+          borderSide: const BorderSide(color: AppColors.orange)),
       focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
-          borderSide: const BorderSide(color: AppColors.grey)),
+          borderSide: const BorderSide(color: AppColors.orange)),
       labelText: labelText,
       hintText: hintText,
     ),

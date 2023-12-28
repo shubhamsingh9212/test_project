@@ -6,18 +6,12 @@ import 'package:test_project/models/que_ans_model.dart';
 
 class HomeController extends GetxController {
   DummyResponse? reponse;
- late TextEditingController incomeController;
-  //  RxString? selectedAns = "0".obs;
+  late TextEditingController incomeController;
   RxInt queNo = 0.obs;
 
   void setQueNo(int? no) {
     queNo.value = no ?? 0;
-    // selectedAns?.value = "0";
   }
-
-  // void setSelectedAns(String? ans) {
-  //   selectedAns?.value = ans ?? "0";
-  // }
 
   @override
   void onInit() {

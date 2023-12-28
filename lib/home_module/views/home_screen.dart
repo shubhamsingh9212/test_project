@@ -39,52 +39,50 @@ class HomeScreenView extends GetView<HomeController> {
                 ),
                 (controller.queNo.value == 6)
                     ? ResultScreen(
-                  response: controller.reponse?.schema,
-                  incomeController: controller.incomeController,
-                )
-                    :
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    indicator(mediaWidth: mediaWidth),
-                    const SizedBox(
-                      height: 25,
-                    ),
-                    Obx(
-                      () => ((controller.queNo.value < 6))
-                          ? customText(
-                              title: controller
-                                  .reponse
-                                  ?.schema
-                                  ?.fields?[controller.queNo.value]
-                                  .schema
-                                  .label,
-                              style: AppTextStyles.lightTextStyle,
-                            )
-                          : const SizedBox(),
-                    ),
-                    customHeight(12),
-                    Obx(() => (controller.queNo.value < 6)
-                        ? (controller
-                                    .reponse
-                                    ?.schema
-                                    ?.fields?[controller.queNo.value]
-                                    .type ==
-                                "Section")
-                            ? customTextField(
-                                controller: controller.incomeController,
-                                hintText: "Income",
-                                labelText: "Income",
-                              )
-                            : radioButtonView()
-                        : const SizedBox()),
-
-                  ],
-                ),
+                        response: controller.reponse?.schema,
+                        incomeController: controller.incomeController,
+                      )
+                    : Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const SizedBox(
+                            height: 30,
+                          ),
+                          indicator(mediaWidth: mediaWidth),
+                          const SizedBox(
+                            height: 25,
+                          ),
+                          Obx(
+                            () => ((controller.queNo.value < 6))
+                                ? customText(
+                                    title: controller
+                                        .reponse
+                                        ?.schema
+                                        ?.fields?[controller.queNo.value]
+                                        .schema
+                                        .label,
+                                    style: AppTextStyles.lightTextStyle,
+                                  )
+                                : const SizedBox(),
+                          ),
+                          customHeight(12),
+                          Obx(() => (controller.queNo.value < 6)
+                              ? (controller
+                                          .reponse
+                                          ?.schema
+                                          ?.fields?[controller.queNo.value]
+                                          .type ==
+                                      "Section")
+                                  ? customTextField(
+                                      controller: controller.incomeController,
+                                      hintText: "Total family income",
+                                      labelText: "Total family income",
+                                    )
+                                  : radioButtonView()
+                              : const SizedBox()),
+                        ],
+                      ),
                 const Spacer(),
                 Obx(
                   () => Row(
@@ -105,7 +103,7 @@ class HomeScreenView extends GetView<HomeController> {
                       ),
                       const Spacer(),
                       Visibility(
-                        visible: controller.queNo.value <=5,
+                        visible: controller.queNo.value <= 5,
                         child: iconButton(
                           onPressed: controller.queNo.value <= 5
                               ? () {
@@ -169,8 +167,6 @@ class HomeScreenView extends GetView<HomeController> {
                 onChanged: (value) {
                   controller.reponse?.schema?.fields?[controller.queNo.value]
                       .schema.selectedIndex.value = value;
-
-                  // controller.setSelectedAns(value ?? "0");
                 },
                 activeColor: AppColors.orange,
                 shape: RoundedRectangleBorder(
