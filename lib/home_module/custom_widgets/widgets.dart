@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:test_project/constants/colors.dart';
 import 'package:test_project/constants/text_styles.dart';
 
@@ -21,6 +22,7 @@ Widget customTextField({
     maxLines: 1,
     keyboardType: TextInputType.number,
     controller: controller,
+    inputFormatters: [FilteringTextInputFormatter.digitsOnly],
     decoration: InputDecoration(
       contentPadding: const EdgeInsets.fromLTRB(15, 22, 12, 14),
       border: OutlineInputBorder(
